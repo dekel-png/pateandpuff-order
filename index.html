@@ -128,6 +128,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .mi-price small { font-size: .55em; font-weight: 500; color: rgba(20,12,4,.55); }
 
 .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.menu-grid > .menu-card:last-child:nth-child(3n+1) { grid-column: 2; }
 .menu-card { position: relative; background: var(--white); border-radius: 26px; padding: 12px 12px 24px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
 .menu-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-4px); }
 .menu-card.in-cart { outline: 2.5px solid var(--caramel); outline-offset: -2.5px; }
@@ -277,6 +278,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
  .hero-visual { justify-self: center; width: min(100%, 420px); }
  .spin-badge { top: -22px; left: -10px; width: 104px; height: 104px; }
  .menu-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+ .menu-grid > .menu-card:last-child:nth-child(3n+1) { grid-column: auto; }
  .menu-feat { grid-template-columns: 1fr; }
  .mf-media { min-height: 0; aspect-ratio: 4/3; }
  .mf-body { padding: 32px 28px; }
@@ -454,12 +456,22 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
     </div>
    </div>
 
+   <div class="menu-card menu-item reveal" data-id="pavlova" data-img="cake-pavlova.jpg">
+    <div class="mi-media"><img src="cake-pavlova.jpg" alt="קערת פבלובה עם נשיקות מרנג" loading="lazy"></div>
+    <h3 class="mi-name">קערת פבלובה</h3>
+    <p class="mi-desc">מוס וניל, קולי רימונים ונשיקות מרנג</p>
+    <div class="mi-foot">
+     <div class="mi-price">220 <small>₪</small></div>
+     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+    </div>
+   </div>
+
   </div>
 
   <div class="more-menu">
    <div class="more-head-sticky reveal">
     <h3 class="more-h3">עוד מהתפריט <span style="color:var(--caramel-deep)">הקר</span></h3>
-    <p class="more-sub">עוד חמש עוגות באותה עבודת יד, מוכנות להזמנה - התמונות שלהן בדרך מהסטודיו.</p>
+    <p class="more-sub">עוד ארבע עוגות באותה עבודת יד, מוכנות להזמנה - התמונות שלהן בדרך מהסטודיו.</p>
     <div class="more-deco-wrap">
      <img class="more-deco poster" src="deco-poster.jpg" alt="קולקציית ראש השנה המאוירת של pâte&puff" loading="lazy">
      <div class="more-deco-cap">THE HOLIDAY COLLECTION</div>
@@ -486,17 +498,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
      </div>
      <div class="mr-price-wrap">
       <div class="mi-price">175 <small>₪</small></div>
-      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-     </div>
-    </div>
-
-    <div class="menu-row menu-item reveal" data-id="pavlova">
-     <div class="mr-info">
-      <h3 class="mi-name">קערת פבלובה</h3>
-      <p class="mi-desc">מוס וניל, קולי רימונים ונשיקות מרנג</p>
-     </div>
-     <div class="mr-price-wrap">
-      <div class="mi-price">220 <small>₪</small></div>
       <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
      </div>
     </div>
