@@ -101,6 +101,67 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
 .st-btn:active { transform: scale(.94); }
 .st-qty { min-width: 26px; text-align: center; font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--cream); font-variant-numeric: tabular-nums; }
 .menu-card.in-cart .st-qty { color: var(--caramel); }
+
+/* ═══ Photo cards ═══ */
+.mi-media { margin: -40px -34px 22px; overflow: hidden; aspect-ratio: 4/3; border-bottom: 1px solid var(--hairline-light); }
+.mi-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.menu-card:hover .mi-media img { transform: scale(1.05); }
+.menu-card .mi-badge { top: 14px; left: 14px; background: rgba(20,12,4,.55); backdrop-filter: blur(4px); z-index: 2; }
+
+/* ═══ Featured card ═══ */
+.menu-feat { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr 1fr; border-left: 1px solid var(--hairline-light); border-bottom: 1px solid var(--hairline-light); position: relative; transition: background .4s var(--ease); }
+.menu-feat:hover { background: rgba(248,243,235,.035); }
+.mf-media { overflow: hidden; min-height: 400px; }
+.mf-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+.menu-feat:hover .mf-media img { transform: scale(1.04); }
+.mf-body { padding: 46px 44px; display: flex; flex-direction: column; justify-content: center; }
+.mf-tag { font-family: var(--caps); font-size: 11px; letter-spacing: .3em; color: var(--caramel); margin-bottom: 18px; }
+.menu-feat .mi-name { font-size: clamp(26px, 2.6vw, 34px); }
+.menu-feat .mi-desc { flex: 0 0 auto; }
+.menu-feat.in-cart { background: rgba(200,160,110,.10); box-shadow: inset 0 3px 0 0 var(--caramel); }
+
+/* ═══ More-menu list ═══ */
+.more-menu { margin-top: 90px; display: grid; grid-template-columns: .75fr 1.6fr; gap: 64px; align-items: start; }
+.more-head-sticky { position: sticky; top: 100px; }
+.more-h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 3.6vw, 54px); line-height: 1.05; color: var(--cream); direction: ltr; text-align: right; }
+.more-h3 em { font-style: italic; }
+.more-sub { font-weight: 300; font-size: 15px; line-height: 1.75; color: rgba(248,243,235,.65); margin-top: 16px; }
+.more-deco { width: 100%; margin-top: 30px; border-radius: 2px; display: block; }
+.more-deco-cap { font-family: var(--caps); font-size: 10px; letter-spacing: .24em; color: rgba(248,243,235,.45); margin-top: 10px; }
+.menu-row { display: flex; align-items: center; gap: 22px; padding: 24px 6px; border-bottom: 1px solid var(--hairline-light); position: relative; transition: background .3s var(--ease); }
+.menu-rows .menu-row:first-child { border-top: 1px solid var(--hairline-light); }
+.menu-row:hover { background: rgba(248,243,235,.03); }
+.menu-row.in-cart { background: rgba(200,160,110,.10); box-shadow: inset 3px 0 0 0 var(--caramel); }
+.mr-info { flex: 1; }
+.mr-num { font-family: var(--serif); font-style: italic; font-size: 13px; letter-spacing: .12em; color: rgba(248,243,235,.35); margin-bottom: 6px; direction: ltr; text-align: right; }
+.menu-row .mi-name { font-size: 20px; margin-bottom: 5px; }
+.menu-row .mi-desc { margin-bottom: 0; font-size: 14px; flex: 0 0 auto; }
+.menu-row .mi-price { font-size: 23px; }
+.menu-row .mi-badge { position: static; display: inline-block; margin-right: 10px; vertical-align: middle; background: transparent; }
+.mr-price-wrap { display: flex; align-items: center; gap: 22px; }
+
+/* ═══ Caramel band ═══ */
+.band { position: relative; height: 44vh; min-height: 280px; background-image: url('tex-caramel.jpg'); background-size: cover; background-position: center 40%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+@media (min-width: 1021px) { .band { background-attachment: fixed; } }
+.band::before { content: ''; position: absolute; inset: 0; background: rgba(20,12,4,.38); }
+.band-line { position: relative; font-family: var(--serif); font-style: italic; font-size: clamp(26px, 3.4vw, 44px); color: var(--cream); text-shadow: 0 2px 30px rgba(20,12,4,.6); letter-spacing: .01em; direction: ltr; text-align: center; padding: 0 20px; }
+
+/* ═══ Summary thumbs ═══ */
+.os-thumb { width: 42px; height: 42px; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
+
+@media (max-width: 1020px) {
+ .more-menu { grid-template-columns: 1fr; gap: 34px; }
+ .more-head-sticky { position: static; }
+ .more-deco { max-width: 340px; }
+ .menu-feat { grid-template-columns: 1fr; }
+ .mf-media { min-height: 0; aspect-ratio: 4/3; }
+ .mf-body { padding: 34px 30px; }
+}
+@media (max-width: 680px) {
+ .menu-row { flex-wrap: wrap; }
+ .mr-info { flex: 1 1 100%; }
+ .mr-price-wrap { width: 100%; justify-content: space-between; }
+}
 .menu-note { text-align: center; font-weight: 300; font-size: 15px; color: rgba(248,243,235,.65); padding: 44px 20px 54px; }
 .menu-note a { color: var(--cream); font-weight: 600; border-bottom: 1px solid rgba(248,243,235,.5); padding-bottom: 2px; }
 
@@ -134,7 +195,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
 .os-empty { font-weight: 300; font-size: 16px; line-height: 1.8; color: rgba(20,12,4,.6); padding: 26px 0; border-top: 1px solid var(--hairline-dark); border-bottom: 1px solid var(--hairline-dark); }
 .os-empty a { font-weight: 600; color: var(--ink); border-bottom: 1px solid rgba(20,12,4,.4); padding-bottom: 2px; }
 .os-lines { list-style: none; }
-.os-line { display: flex; align-items: baseline; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--hairline-dark); font-size: 16px; }
+.os-line { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--hairline-dark); font-size: 16px; }
 .os-line:first-child { border-top: 1px solid var(--hairline-dark); }
 .os-line-name { flex: 1; font-family: var(--he-serif); font-weight: 500; font-size: 17px; color: var(--ink); }
 .os-line-qty { font-weight: 300; color: rgba(20,12,4,.55); white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -257,58 +318,22 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
  <div class="wrap">
   <div class="menu-grid">
 
-   <div class="menu-card reveal" data-id="st-honore">
-    <div class="mi-num">01</div>
-    <h3 class="mi-name">סנט אונורה</h3>
-    <p class="mi-desc">בצק עלים, פחזניות מקורמלות במילוי פטיסייר ושנטי וניל</p>
-    <div class="mi-foot">
-     <div class="mi-price">220 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+   <div class="menu-feat menu-item reveal" data-id="medovik" data-img="cake-medovik.jpg">
+    <div class="mf-media"><img src="cake-medovik.jpg" alt="מודוביק - עוגת דבש בשכבות של pâte&puff" loading="lazy"></div>
+    <div class="mf-body">
+     <div class="mf-tag">01 · הדגל של ראש השנה</div>
+     <h3 class="mi-name">מודוביק</h3>
+     <p class="mi-desc">שכבות של עוגת דבש וקרם שמנת חמוצה</p>
+     <div class="mi-foot">
+      <div class="mi-price">245 <small>₪</small></div>
+      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+     </div>
     </div>
    </div>
 
-   <div class="menu-card reveal" data-id="medovik">
+   <div class="menu-card menu-item reveal" data-id="honey-tiramisu" data-img="cake-honey-tiramisu.jpg">
+    <div class="mi-media"><img src="cake-honey-tiramisu.jpg" alt="טרמיסו דבש בכלי זכוכית" loading="lazy"></div>
     <div class="mi-num">02</div>
-    <h3 class="mi-name">מודוביק</h3>
-    <p class="mi-desc">שכבות של עוגת דבש וקרם שמנת חמוצה</p>
-    <div class="mi-foot">
-     <div class="mi-price">245 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-    </div>
-   </div>
-
-   <div class="menu-card reveal" data-id="bee-sting">
-    <div class="mi-num">03</div>
-    <h3 class="mi-name">עוקץ הדבורה</h3>
-    <p class="mi-desc">בצק בריוש עם שקדים פרוסים במילוי שנטי וניל</p>
-    <div class="mi-foot">
-     <div class="mi-price">165 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-    </div>
-   </div>
-
-   <div class="menu-card reveal" data-id="salted-honey-tart">
-    <div class="mi-num">04</div>
-    <h3 class="mi-name">טארט דבש מלוח</h3>
-    <p class="mi-desc">בצק פריך במילוי דבש מלוח</p>
-    <div class="mi-foot">
-     <div class="mi-price">175 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-    </div>
-   </div>
-
-   <div class="menu-card reveal" data-id="apple-tart">
-    <div class="mi-num">05</div>
-    <h3 class="mi-name">טארט תפוחים</h3>
-    <p class="mi-desc">בצק פריך, קרם פטיסייר, תפוחים וקינמון</p>
-    <div class="mi-foot">
-     <div class="mi-price">175 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-    </div>
-   </div>
-
-   <div class="menu-card reveal" data-id="honey-tiramisu">
-    <div class="mi-num">06</div>
     <h3 class="mi-name">טרמיסו דבש</h3>
     <p class="mi-desc">שכבות של ביסקוויט רך עם אספרסו ודבש, קרם מסקרפונה דבש וקקאו</p>
     <div class="mi-foot">
@@ -317,59 +342,31 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
     </div>
    </div>
 
-   <div class="menu-card reveal" data-id="tapioca-pomegranate">
-    <div class="mi-num">07</div>
-    <span class="mi-badge">פרווה</span>
-    <h3 class="mi-name">קערת טפיוקה רימונים</h3>
-    <p class="mi-desc">קולי רימונים, טפיוקה בחלב קוקוס ורימונים טריים</p>
+   <div class="menu-card menu-item reveal" data-id="apple-tart" data-img="cake-apple-tart.jpg">
+    <div class="mi-media"><img src="cake-apple-tart.jpg" alt="טארט תפוחים עם עלה זהב" loading="lazy"></div>
+    <div class="mi-num">03</div>
+    <h3 class="mi-name">טארט תפוחים</h3>
+    <p class="mi-desc">בצק פריך, קרם פטיסייר, תפוחים וקינמון</p>
     <div class="mi-foot">
-     <div class="mi-price">145 <small>₪</small></div>
+     <div class="mi-price">175 <small>₪</small></div>
      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
     </div>
    </div>
 
-   <div class="menu-card reveal" data-id="pavlova">
-    <div class="mi-num">08</div>
-    <h3 class="mi-name">קערת פבלובה</h3>
-    <p class="mi-desc">מוס וניל, קולי רימונים ונשיקות מרנג</p>
+   <div class="menu-card menu-item reveal" data-id="bee-sting" data-img="cake-bee-sting.jpg">
+    <div class="mi-media"><img src="cake-bee-sting.jpg" alt="עוקץ הדבורה - בריוש שקדים במילוי קרם" loading="lazy"></div>
+    <div class="mi-num">04</div>
+    <h3 class="mi-name">עוקץ הדבורה</h3>
+    <p class="mi-desc">בצק בריוש עם שקדים פרוסים במילוי שנטי וניל</p>
     <div class="mi-foot">
-     <div class="mi-price">220 <small>₪</small></div>
+     <div class="mi-price">165 <small>₪</small></div>
      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
     </div>
    </div>
 
-   <div class="menu-card reveal" data-id="millefeuille">
-    <div class="mi-num">09</div>
-    <h3 class="mi-name">פס מילפיי</h3>
-    <p class="mi-desc">שכבות בצק עלים וקרם וניל וקרמל</p>
-    <div class="mi-foot">
-     <div class="mi-price">169 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-    </div>
-   </div>
-
-   <div class="menu-card reveal" data-id="honey-mascarpone">
-    <div class="mi-num">10</div>
-    <h3 class="mi-name">פס דבש מסקרפונה</h3>
-    <p class="mi-desc">שכבות של טורט דבש וקרם מסקרפונה וניל</p>
-    <div class="mi-foot">
-     <div class="mi-price">145 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-    </div>
-   </div>
-
-   <div class="menu-card reveal" data-id="basque">
-    <div class="mi-num">11</div>
-    <h3 class="mi-name">באסקית גבינה</h3>
-    <p class="mi-desc">עוגת הגבינה הצרובה, קרמית מבפנים</p>
-    <div class="mi-foot">
-     <div class="mi-price">159 <small>₪</small></div>
-     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-    </div>
-   </div>
-
-   <div class="menu-card reveal" data-id="ny-cheesecake">
-    <div class="mi-num">12</div>
+   <div class="menu-card menu-item reveal" data-id="ny-cheesecake" data-img="cake-ny-cheesecake.jpg">
+    <div class="mi-media"><img src="cake-ny-cheesecake.jpg" alt="צ'יז קייק ניו יורקית עם תותים ושוקולד ממותג" loading="lazy"></div>
+    <div class="mi-num">05</div>
     <h3 class="mi-name">צ'יז קייק ניו יורקית אפויה</h3>
     <p class="mi-desc">הקלאסיקה הניו יורקית, אפויה ועשירה</p>
     <div class="mi-foot">
@@ -378,6 +375,102 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
     </div>
    </div>
 
+   <div class="menu-card menu-item reveal" data-id="honey-mascarpone" data-img="cake-honey-mascarpone.jpg">
+    <div class="mi-media"><img src="cake-honey-mascarpone.jpg" alt="פס דבש מסקרפונה בשכבות" loading="lazy"></div>
+    <div class="mi-num">06</div>
+    <h3 class="mi-name">פס דבש מסקרפונה</h3>
+    <p class="mi-desc">שכבות של טורט דבש וקרם מסקרפונה וניל</p>
+    <div class="mi-foot">
+     <div class="mi-price">145 <small>₪</small></div>
+     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+    </div>
+   </div>
+
+   <div class="menu-card menu-item reveal" data-id="tapioca-pomegranate" data-img="cake-tapioca.jpg">
+    <span class="mi-badge">פרווה</span>
+    <div class="mi-media"><img src="cake-tapioca.jpg" alt="קערת טפיוקה עם רימונים טריים" loading="lazy"></div>
+    <div class="mi-num">07</div>
+    <h3 class="mi-name">קערת טפיוקה רימונים</h3>
+    <p class="mi-desc">קולי רימונים, טפיוקה בחלב קוקוס ורימונים טריים</p>
+    <div class="mi-foot">
+     <div class="mi-price">145 <small>₪</small></div>
+     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+    </div>
+   </div>
+
+  </div>
+
+  <div class="more-menu">
+   <div class="more-head-sticky reveal">
+    <h3 class="more-h3">More<br><em>to love.</em></h3>
+    <p class="more-sub">עוד חמש עוגות מהתפריט הקר - באותה עבודת יד, מוכנות להזמנה.</p>
+    <img class="more-deco" src="deco-macarons.jpg" alt="מקרונים בעבודת יד" loading="lazy">
+    <div class="more-deco-cap">FROM THE STUDIO</div>
+   </div>
+
+   <div class="menu-rows">
+
+    <div class="menu-row menu-item reveal" data-id="st-honore">
+     <div class="mr-info">
+      <div class="mr-num">08</div>
+      <h3 class="mi-name">סנט אונורה</h3>
+      <p class="mi-desc">בצק עלים, פחזניות מקורמלות במילוי פטיסייר ושנטי וניל</p>
+     </div>
+     <div class="mr-price-wrap">
+      <div class="mi-price">220 <small>₪</small></div>
+      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+     </div>
+    </div>
+
+    <div class="menu-row menu-item reveal" data-id="salted-honey-tart">
+     <div class="mr-info">
+      <div class="mr-num">09</div>
+      <h3 class="mi-name">טארט דבש מלוח</h3>
+      <p class="mi-desc">בצק פריך במילוי דבש מלוח</p>
+     </div>
+     <div class="mr-price-wrap">
+      <div class="mi-price">175 <small>₪</small></div>
+      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+     </div>
+    </div>
+
+    <div class="menu-row menu-item reveal" data-id="pavlova">
+     <div class="mr-info">
+      <div class="mr-num">10</div>
+      <h3 class="mi-name">קערת פבלובה</h3>
+      <p class="mi-desc">מוס וניל, קולי רימונים ונשיקות מרנג</p>
+     </div>
+     <div class="mr-price-wrap">
+      <div class="mi-price">220 <small>₪</small></div>
+      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+     </div>
+    </div>
+
+    <div class="menu-row menu-item reveal" data-id="millefeuille">
+     <div class="mr-info">
+      <div class="mr-num">11</div>
+      <h3 class="mi-name">פס מילפיי</h3>
+      <p class="mi-desc">שכבות בצק עלים וקרם וניל וקרמל</p>
+     </div>
+     <div class="mr-price-wrap">
+      <div class="mi-price">169 <small>₪</small></div>
+      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+     </div>
+    </div>
+
+    <div class="menu-row menu-item reveal" data-id="basque">
+     <div class="mr-info">
+      <div class="mr-num">12</div>
+      <h3 class="mi-name">באסקית גבינה</h3>
+      <p class="mi-desc">עוגת הגבינה הצרובה, קרמית מבפנים</p>
+     </div>
+     <div class="mr-price-wrap">
+      <div class="mi-price">159 <small>₪</small></div>
+      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
+     </div>
+    </div>
+
+   </div>
   </div>
  </div>
 
@@ -389,6 +482,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
   <figure><img src="p-branded-boxes.jpeg" alt="קופסאות ממותגות" loading="lazy"></figure>
  </div>
 </section>
+
+<!-- ═══ CARAMEL BAND ═══ -->
+<div class="band">
+ <div class="band-line reveal">Honey, caramel &amp; everything in between.</div>
+</div>
 
 <!-- ═══ HOW ═══ -->
 <section class="how" id="how">
@@ -538,7 +636,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
 (function initCart() {
  const WA_NUMBER = '972548118081';
  const cart = {}; // id -> qty
- const cards = Array.from(document.querySelectorAll('.menu-card'));
+ const cards = Array.from(document.querySelectorAll('.menu-item'));
  const bar = document.getElementById('cart-bar');
  const scCount = document.getElementById('sc-count');
  const scTotal = document.getElementById('sc-total');
@@ -584,7 +682,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 72px; pad
     const nm = document.createElement('span'); nm.className = 'os-line-name'; nm.textContent = itemName(card);
     const q = document.createElement('span'); q.className = 'os-line-qty'; q.textContent = '× ' + qty;
     const s = document.createElement('span'); s.className = 'os-line-sum'; s.textContent = fmt(qty * price);
-    li.append(rm, nm, q, s);
+    if (card.dataset.img) {
+     const im = document.createElement('img');
+     im.className = 'os-thumb'; im.src = card.dataset.img; im.alt = '';
+     li.append(rm, im, nm, q, s);
+    } else {
+     li.append(rm, nm, q, s);
+    }
     osLines.appendChild(li);
    }
   });
