@@ -79,6 +79,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .hero-sub-center { margin-left: auto; margin-right: auto; max-width: 560px; }
 .hero-actions-center { justify-content: center; }
 .hero-trust-center { justify-content: center; flex-wrap: wrap; text-align: center; }
+.hero-divider { width: 64px; height: 1.5px; margin: 26px auto 0; background: linear-gradient(90deg, transparent, var(--caramel), transparent); }
+.hero-lede { font-weight: 300; font-size: clamp(18px, 2vw, 23px); line-height: 1.85; color: rgba(20,12,4,.76); max-width: 600px; margin: 18px auto 0; }
+.lede-accent { font-family: 'Suez One', var(--he-serif); font-weight: 400; color: var(--caramel-deep); white-space: nowrap; }
+.hero-steps { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 32px; font-weight: 600; font-size: 14.5px; letter-spacing: .06em; color: rgba(20,12,4,.78); }
+.hs-star { color: var(--caramel); font-size: 11px; }
 .hero-illus { position: relative; width: min(100%, 1700px); margin: 46px auto 0; }
 .hero-illus img { width: 100%; display: block; }
 .hero-illus .spin-badge { top: -54px; left: clamp(20px, 6vw, 90px); }
@@ -95,7 +100,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .btn-solid:hover { background: var(--espresso-deep); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(73,52,27,.32); }
 .btn-outline { font-family: var(--sans); font-weight: 600; font-size: 16px; color: var(--ink); border: 1.5px solid rgba(20,12,4,.25); padding: 17px 34px; border-radius: 100px; transition: all .3s var(--ease); display: inline-block; }
 .btn-outline:hover { border-color: var(--ink); background: rgba(20,12,4,.03); }
-.hero-trust { display: flex; align-items: center; gap: 10px; margin-top: 26px; font-weight: 400; font-size: 14.5px; color: rgba(20,12,4,.6); }
+.hero-trust { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-weight: 300; font-size: 13.5px; color: rgba(20,12,4,.55); }
 .hero-trust b { font-weight: 700; color: var(--ink); }
 
 .hero-visual { position: relative; z-index: 1; justify-self: start; width: min(100%, 480px); }
@@ -360,12 +365,14 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
  <div class="hero-center">
   <div class="eyebrow eyebrow-center reveal">ROSH HASHANA · PRE-ORDERS</div>
   <h1 class="hero-h1 hero-h1-center reveal">A sweeter <em>new year.</em></h1>
-  <p class="hero-sub hero-sub-center reveal">עוגות קרות בעבודת יד לשולחן החג. בוחרים מהתפריט, שולחים הזמנה אחת בוואטסאפ, ואוספים <strong>טרי מהסניף שבחרתם</strong> לקראת החג.</p>
+  <div class="hero-divider reveal" aria-hidden="true"></div>
+  <p class="hero-lede reveal">מסורת פוגשת התחלה חדשה: קולקציית עוגות בעבודת יד לשולחן החג - יפה, מוקפדת, <span class="lede-accent">וקצת יותר מתוקה.</span></p>
   <div class="hero-actions hero-actions-center reveal">
    <a href="#menu" class="btn-solid">להרכבת ההזמנה</a>
    <a href="#how" class="btn-outline">איך זה עובד?</a>
   </div>
-  <p class="hero-trust hero-trust-center reveal">איסוף החל <b>מיומיים לפני ערב החג</b> · מסריק · נמל תל אביב · הרצליה פיתוח</p>
+  <div class="hero-steps reveal">בוחרים מהתפריט<span class="hs-star">✦</span>שולחים בוואטסאפ<span class="hs-star">✦</span>אוספים טרי בסניף</div>
+  <p class="hero-trust hero-trust-center reveal">איסוף החל מיומיים לפני ערב החג · מסריק · נמל תל אביב · הרצליה פיתוח</p>
  </div>
  <div class="hero-illus reveal">
   <img src="illus-banner.jpg" alt="איור שולחן החג של pâte&puff - עוגות, רימון ודבש" fetchpriority="high">
