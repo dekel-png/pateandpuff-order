@@ -76,6 +76,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .hero-center { text-align: center; max-width: 880px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
 .eyebrow-center { justify-content: center; }
 .hero-h1-center { text-align: center; font-size: clamp(42px, 6vw, 88px); line-height: 1.04; }
+.hero-h1-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: .005em; color: var(--espresso); line-height: 1.06; }
 .hero-sub-center { margin-left: auto; margin-right: auto; max-width: 560px; }
 .hero-actions-center { justify-content: center; }
 .hero-trust-center { justify-content: center; flex-wrap: wrap; text-align: center; }
@@ -323,8 +324,22 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
  .nav-logo img { height: 34px; }
  .nav-links { display: none; }
  .nav-cta { padding: 11px 22px; font-size: 14px; }
- .menu-grid { grid-template-columns: 1fr; }
- .hero-h1 { font-size: clamp(50px, 14vw, 72px); }
+ /* גריד אופנה במובייל: 2 בשורה, רביעייה על המסך */
+ .menu-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+ .menu-grid > .menu-card:last-child:nth-child(3n+1) { grid-column: auto; }
+ .menu-card { border-radius: 18px; padding: 7px 7px 14px; }
+ .mi-media { border-radius: 13px; margin-bottom: 10px; }
+ .menu-card .mi-name, .menu-card .mi-desc { padding: 0 6px; }
+ .menu-card .mi-name { font-size: 15px; margin-bottom: 4px; line-height: 1.25; }
+ .menu-card .mi-desc { display: none; }
+ .menu-card .mi-foot { padding: 0 6px; margin-top: 10px; flex-wrap: wrap; gap: 8px; }
+ .mi-price { font-size: 19px; }
+ .stepper { padding: 3px; gap: 2px; }
+ .st-btn { width: 32px; height: 32px; font-size: 17px; }
+ .st-qty { min-width: 22px; font-size: 14.5px; }
+ .mi-badge { top: 14px; right: 14px; font-size: 10.5px; padding: 5px 11px; }
+ .ph-tile span { font-size: 46px; }
+ .hero-h1 { font-size: clamp(38px, 10.5vw, 64px); }
  .hero-actions .btn-solid, .hero-actions .btn-outline { width: 100%; text-align: center; }
  .hero-illus img { min-height: 210px; object-fit: cover; object-position: center; }
  .hero-illus .spin-badge { display: none; }
@@ -364,7 +379,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 <section class="hero" id="top">
  <div class="hero-center">
   <div class="eyebrow eyebrow-center reveal">ROSH HASHANA · PRE-ORDERS</div>
-  <h1 class="hero-h1 hero-h1-center reveal">A new year,<br><em>the Pâte &amp; Puff way.</em></h1>
+  <h1 class="hero-h1 hero-h1-center hero-h1-logo reveal">a new year,<br>the pâte&amp;puff way.</h1>
   <div class="hero-divider reveal" aria-hidden="true"></div>
   <p class="hero-lede reveal">קולקציית החג שלנו כבר כאן: כל עוגה נוצרה במיוחד לרגעים הכי יפים של ראש השנה. <span class="lede-accent">עכשיו תורכם לבחור.</span></p>
   <div class="hero-actions hero-actions-center reveal">
