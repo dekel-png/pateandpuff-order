@@ -156,6 +156,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .more-sub { font-weight: 300; font-size: 15.5px; line-height: 1.75; color: rgba(20,12,4,.62); margin-top: 14px; }
 .more-deco-wrap { position: relative; margin-top: 30px; }
 .more-deco { width: 100%; border-radius: 999px 999px 22px 22px; display: block; box-shadow: var(--shadow-soft); aspect-ratio: 4/4.4; object-fit: cover; }
+.more-deco.poster { border-radius: 20px; aspect-ratio: auto; object-fit: unset; background: #FEFBF6; }
 .more-deco-cap { font-family: var(--caps); font-size: 10px; letter-spacing: .24em; color: rgba(20,12,4,.45); margin-top: 12px; }
 .menu-rows { display: flex; flex-direction: column; gap: 14px; }
 .menu-row { display: flex; align-items: center; gap: 22px; padding: 22px 26px; background: var(--white); border-radius: 20px; box-shadow: 0 8px 26px rgba(73,52,27,.06); position: relative; transition: box-shadow .3s var(--ease), transform .3s var(--ease); }
@@ -173,7 +174,11 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .menu-note a:hover { border-color: var(--espresso); }
 
 /* ═══ Photo strip ═══ */
-.photo-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 1280px; margin: 0 auto; padding: 0 48px 90px; }
+.photo-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; max-width: 1280px; margin: 0 auto; padding: 0 48px 90px; }
+
+/* ═══ Illustrated band ═══ */
+.illus-band { background: #FEFBF6; border-top: 1px solid rgba(20,12,4,.05); border-bottom: 1px solid rgba(20,12,4,.05); }
+.illus-band img { width: 100%; max-width: 1700px; margin: 0 auto; display: block; }
 .photo-strip figure { position: relative; overflow: hidden; aspect-ratio: 4/3; border-radius: 24px; box-shadow: var(--shadow-soft); }
 .photo-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
 .photo-strip figure:hover img { transform: scale(1.06); }
@@ -251,7 +256,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .footer-copy { font-family: var(--caps); font-size: 11px; letter-spacing: .18em; color: rgba(248,243,235,.6); direction: ltr; }
 
 /* ═══ STICKY CART BAR ═══ */
-.sticky-cta { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 150%); z-index: 150; display: flex; align-items: center; gap: 20px; background: rgba(32,22,9,.95); backdrop-filter: blur(16px) saturate(140%); border-radius: 100px; padding: 10px 12px 10px 12px; box-shadow: 0 20px 50px rgba(20,12,4,.4), 0 0 0 1px rgba(200,160,110,.35); transition: transform .5s var(--ease); max-width: calc(100vw - 24px); }
+.sticky-cta { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, calc(100% + 160px)); z-index: 150; display: flex; align-items: center; gap: 20px; background: rgba(32,22,9,.95); backdrop-filter: blur(16px) saturate(140%); border-radius: 100px; padding: 10px 12px 10px 12px; box-shadow: 0 20px 50px rgba(20,12,4,.4), 0 0 0 1px rgba(200,160,110,.35); transition: transform .5s var(--ease); max-width: calc(100vw - 24px); }
 .sticky-cta.show { transform: translate(-50%, 0); }
 .sc-info { display: flex; align-items: center; gap: 12px; padding-right: 16px; white-space: nowrap; }
 .sc-chip { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 28px; padding: 0 8px; border-radius: 100px; background: var(--caramel); color: var(--ink); font-weight: 800; font-size: 14.5px; font-variant-numeric: tabular-nums; }
@@ -456,8 +461,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
     <h3 class="more-h3">עוד מהתפריט <span style="color:var(--caramel-deep)">הקר</span></h3>
     <p class="more-sub">עוד חמש עוגות באותה עבודת יד, מוכנות להזמנה - התמונות שלהן בדרך מהסטודיו.</p>
     <div class="more-deco-wrap">
-     <img class="more-deco" src="deco-tart.jpg" alt="טארט קצפת בעבודת יד" loading="lazy">
-     <div class="more-deco-cap">FROM THE STUDIO</div>
+     <img class="more-deco poster" src="deco-poster.jpg" alt="קולקציית ראש השנה המאוירת של pâte&puff" loading="lazy">
+     <div class="more-deco-cap">THE HOLIDAY COLLECTION</div>
     </div>
    </div>
 
@@ -527,9 +532,15 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 
 <!-- ═══ PHOTO STRIP ═══ -->
 <div class="photo-strip">
+ <figure class="reveal"><img src="p-shelves.jpg" alt="קופסאות הקולקציה על המדפים" loading="lazy"></figure>
  <figure class="reveal"><img src="p-croissant-box.jpeg" alt="קופסה ממותגת של pâte&puff" loading="lazy"></figure>
  <figure class="reveal"><img src="p-branded-boxes.jpeg" alt="קופסאות ממותגות" loading="lazy"></figure>
 </div>
+
+<!-- ═══ ILLUSTRATED BAND ═══ -->
+<section class="illus-band">
+ <img class="reveal" src="illus-banner.jpg" alt="איור שולחן החג של pâte&puff - עוגות, רימון ודבש" loading="lazy">
+</section>
 
 <!-- ═══ HOW ═══ -->
 <section class="how" id="how">
