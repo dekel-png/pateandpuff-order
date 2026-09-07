@@ -66,7 +66,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .nav-cta:hover { background: var(--espresso-deep); transform: translateY(-1px); box-shadow: 0 10px 26px rgba(73,52,27,.3); }
 
 /* ═══ HERO ═══ */
-.hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 130px 0 40px; background: radial-gradient(ellipse 90% 70% at 78% 10%, var(--cream-2) 0%, var(--cream) 55%); overflow: hidden; }
+.hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 130px 0 0; background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 40%, #FEFBF6 100%); overflow: hidden; }
+.hero-center { text-align: center; max-width: 880px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+.eyebrow-center { justify-content: center; }
+.hero-h1-center { text-align: center; font-size: clamp(52px, 7.4vw, 112px); }
+.hero-sub-center { margin-left: auto; margin-right: auto; max-width: 560px; }
+.hero-actions-center { justify-content: center; }
+.hero-trust-center { justify-content: center; flex-wrap: wrap; text-align: center; }
+.hero-illus { position: relative; width: min(100%, 1700px); margin: 46px auto 0; }
+.hero-illus img { width: 100%; display: block; }
+.hero-illus .spin-badge { top: -54px; left: clamp(20px, 6vw, 90px); }
 .hero-wrap { max-width: 1280px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; width: 100%; }
 .hero-copy { position: relative; z-index: 2; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--caps); font-size: 12px; letter-spacing: .3em; font-weight: 400; color: var(--caramel-deep); margin-bottom: 26px; }
@@ -299,6 +308,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
  .menu-grid { grid-template-columns: 1fr; }
  .hero-h1 { font-size: clamp(50px, 14vw, 72px); }
  .hero-actions .btn-solid, .hero-actions .btn-outline { width: 100%; text-align: center; }
+ .hero-illus img { min-height: 210px; object-fit: cover; object-position: center; }
+ .hero-illus .spin-badge { display: none; }
  .menu-row { flex-wrap: wrap; padding: 20px; }
  .mr-info { flex: 1 1 100%; }
  .mr-price-wrap { width: 100%; justify-content: space-between; }
@@ -333,32 +344,27 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="top">
- <div class="hero-wrap">
-  <div class="hero-copy">
-   <div class="eyebrow reveal">ROSH HASHANA · PRE-ORDERS · TEL AVIV</div>
-   <h1 class="hero-h1 reveal">A sweeter<br><em>new year.</em></h1>
-   <p class="hero-sub reveal">עוגות קרות בעבודת יד לשולחן החג. בוחרים מהתפריט, שולחים הזמנה אחת בוואטסאפ, ואוספים <strong>טרי מהמאפייה</strong> לקראת החג.</p>
-   <div class="hero-actions reveal">
-    <a href="#menu" class="btn-solid">להרכבת ההזמנה</a>
-    <a href="#how" class="btn-outline">איך זה עובד?</a>
-   </div>
-   <p class="hero-trust reveal">🕐 איסוף החל <b>מיומיים לפני ערב החג</b> · הזמנה מראש בלבד</p>
+ <div class="hero-center">
+  <div class="eyebrow eyebrow-center reveal">ROSH HASHANA · PRE-ORDERS</div>
+  <h1 class="hero-h1 hero-h1-center reveal">A sweeter <em>new year.</em></h1>
+  <p class="hero-sub hero-sub-center reveal">עוגות קרות בעבודת יד לשולחן החג. בוחרים מהתפריט, שולחים הזמנה אחת בוואטסאפ, ואוספים <strong>טרי מהסניף שבחרתם</strong> לקראת החג.</p>
+  <div class="hero-actions hero-actions-center reveal">
+   <a href="#menu" class="btn-solid">להרכבת ההזמנה</a>
+   <a href="#how" class="btn-outline">איך זה עובד?</a>
   </div>
-  <div class="hero-visual reveal">
-   <div class="arch">
-    <img src="cake-medovik.jpg" alt="מודוביק - עוגת הדבש של pâte&puff" fetchpriority="high">
-    <div class="arch-caption">מודוביק <small>· עוגת הדבש של החג</small></div>
-   </div>
-   <div class="spin-badge" aria-hidden="true">
-    <svg viewBox="0 0 128 128" width="128" height="128">
-     <defs><path id="circlePath" d="M 64,64 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0"/></defs>
-     <circle cx="64" cy="64" r="62" fill="#F8F3EB"/>
-     <text font-family="Jost, sans-serif" font-size="11.5" letter-spacing="3.5" fill="#49341B">
-      <textPath href="#circlePath">ROSH HASHANA · PÂTE &amp; PUFF · PRE-ORDER · </textPath>
-     </text>
-    </svg>
-    <div class="sb-mid">🍎</div>
-   </div>
+  <p class="hero-trust hero-trust-center reveal">איסוף החל <b>מיומיים לפני ערב החג</b> · מסריק · נמל תל אביב · הרצליה פיתוח</p>
+ </div>
+ <div class="hero-illus reveal">
+  <img src="illus-banner.jpg" alt="איור שולחן החג של pâte&puff - עוגות, רימון ודבש" fetchpriority="high">
+  <div class="spin-badge" aria-hidden="true">
+   <svg viewBox="0 0 128 128" width="128" height="128">
+    <defs><path id="circlePath" d="M 64,64 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0"/></defs>
+    <circle cx="64" cy="64" r="62" fill="#FFFFFF"/>
+    <text font-family="Jost, sans-serif" font-size="11.5" letter-spacing="3.5" fill="#49341B">
+     <textPath href="#circlePath">ROSH HASHANA · PÂTE &amp; PUFF · PRE-ORDER · </textPath>
+    </text>
+   </svg>
+   <div class="sb-mid">🍎</div>
   </div>
  </div>
 </section>
@@ -538,11 +544,6 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
  <figure class="reveal"><img src="p-branded-boxes.jpeg" alt="קופסאות ממותגות" loading="lazy"></figure>
 </div>
 
-<!-- ═══ ILLUSTRATED BAND ═══ -->
-<section class="illus-band">
- <img class="reveal" src="illus-banner.jpg" alt="איור שולחן החג של pâte&puff - עוגות, רימון ודבש" loading="lazy">
-</section>
-
 <!-- ═══ HOW ═══ -->
 <section class="how" id="how">
  <div class="wrap">
@@ -564,7 +565,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    <div class="how-step reveal">
     <div class="how-num">03</div>
     <div class="how-t">אוספים</div>
-    <p class="how-d">טרי מהמאפייה, <b>החל מיומיים לפני ערב החג</b>. את המועד המדויק סוגרים יחד בהודעה.</p>
+    <p class="how-d">טרי מהסניף שבחרתם - מסריק, נמל תל אביב או הרצליה פיתוח - <b>החל מיומיים לפני ערב החג</b>. את המועד המדויק סוגרים יחד בהודעה.</p>
    </div>
   </div>
  </div>
@@ -598,6 +599,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
     <div class="of-field">
      <label class="of-label" for="of-name">שם מלא</label>
      <input class="of-input" id="of-name" name="name" type="text" autocomplete="name" placeholder="על שם מי ההזמנה?">
+    </div>
+
+    <div class="of-field">
+     <label class="of-label" for="of-branch">סניף לאיסוף</label>
+     <select class="of-select" id="of-branch">
+      <option value="">בחרו סניף</option>
+      <option>תל אביב - כיכר מסריק</option>
+      <option>נמל תל אביב</option>
+      <option>הרצליה פיתוח - קרן היסוד 31</option>
+     </select>
     </div>
 
     <div class="of-field">
@@ -641,7 +652,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
   <div class="footer-links">
    <a href="https://wa.me/972548118081" target="_blank" rel="noopener">וואטסאפ · 054-8118081</a>
    <a href="https://www.instagram.com/pateandpuff" target="_blank" rel="noopener">אינסטגרם</a>
-   <span>TEL AVIV</span>
+   <span>כיכר מסריק</span>
+   <span>נמל תל אביב</span>
+   <span>הרצליה פיתוח - קרן היסוד 31</span>
   </div>
   <div class="footer-copy">© 2026 pâte&amp;puff · ROSH HASHANA</div>
  </div>
@@ -795,6 +808,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 
  function buildMessage() {
   const name = document.getElementById('of-name').value.trim();
+  const branch = document.getElementById('of-branch').value;
   const phone = document.getElementById('of-phone').value.trim();
   const pickup = document.getElementById('of-pickup').value;
   const notes = document.getElementById('of-notes').value.trim();
@@ -813,6 +827,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
   msg += lines.join('\n') + '\n\n';
   msg += 'סה"כ: ' + total.toLocaleString('he-IL') + ' ש"ח\n\n';
   msg += 'שם: ' + name;
+  if (branch) msg += '\nסניף לאיסוף: ' + branch;
   if (phone) msg += '\nטלפון: ' + phone;
   if (pickup) msg += '\nמועד איסוף: ' + pickup;
   if (notes) msg += '\nהערות: ' + notes;
@@ -832,6 +847,12 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
   if (!nameEl.value.trim()) {
    showToast('רק שם חסר לנו');
    nameEl.focus();
+   return;
+  }
+  const branchEl = document.getElementById('of-branch');
+  if (!branchEl.value) {
+   showToast('באיזה סניף נוח לאסוף?');
+   branchEl.focus();
    return;
   }
   const url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(buildMessage());
