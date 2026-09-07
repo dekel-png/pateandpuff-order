@@ -196,6 +196,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 .dry-section { padding-top: 20px; }
 .dry-rows { margin-top: 26px; display: flex; flex-direction: column; gap: 14px; }
 
+.ph-tile { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #F7F0E4, #EFE4D0); }
+.ph-tile span { font-family: 'Suez One', serif; font-size: 72px; color: rgba(169,124,66,.5); line-height: 1; }
+
 /* ═══ Caramel band ═══ */
 .band-wrap { padding: 0 24px 0; }
 .band { position: relative; height: 46vh; min-height: 300px; border-radius: 34px; overflow: hidden; background-image: url('tex-caramel.jpg'); background-size: cover; background-position: center 40%; display: flex; align-items: center; justify-content: center; }
@@ -372,19 +375,19 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
  </div>
 </section>
 
-<!-- ═══ MENU ═══ -->
+<!-- MENU -->
 <section class="menu-section" id="menu">
  <div class="wrap">
   <div class="sec-head">
    <div class="eyebrow reveal">THE HOLIDAY MENU</div>
-   <h2 class="sec-h2 reveal">עוגות קרות <span class="accent">לראש השנה</span></h2>
+   <h2 class="sec-h2 reveal">התפריט <span class="accent">לראש השנה</span></h2>
    <p class="sec-intro reveal">כל העוגות נעשות בהזמנה מראש. <strong>מסמנים כמות ליד כל עוגה</strong>, ולמטה שולחים הודעה אחת מסודרת בוואטסאפ - ואנחנו עונים עם כל הפרטים.</p>
   </div>
 
-  <div class="menu-feat menu-item reveal" data-id="medovik" data-img="cake-medovik.jpg">
-   <div class="mf-media"><img src="cake-medovik.jpg" alt="מודוביק - עוגת דבש בשכבות של pâte&puff" loading="lazy"></div>
-   <div class="mf-body">
-    <div class="mf-tag">הדגל של ראש השנה</div>
+  <div class="menu-grid">
+
+   <div class="menu-card menu-item reveal" data-id="medovik" data-img="cake-medovik.jpg">
+    <div class="mi-media"><img src="cake-medovik.jpg" alt="מודוביק" loading="lazy"></div>
     <h3 class="mi-name">מודוביק</h3>
     <p class="mi-desc">שכבות של עוגת דבש וקרם שמנת חמוצה</p>
     <div class="mi-foot">
@@ -392,12 +395,9 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
     </div>
    </div>
-  </div>
-
-  <div class="menu-grid">
 
    <div class="menu-card menu-item reveal" data-id="honey-tiramisu" data-img="cake-honey-tiramisu.jpg">
-    <div class="mi-media"><img src="cake-honey-tiramisu.jpg" alt="טרמיסו דבש בכלי זכוכית" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-honey-tiramisu.jpg" alt="טרמיסו דבש" loading="lazy"></div>
     <h3 class="mi-name">טרמיסו דבש</h3>
     <p class="mi-desc">שכבות של ביסקוויט רך עם אספרסו ודבש, קרם מסקרפונה דבש וקקאו</p>
     <div class="mi-foot">
@@ -407,7 +407,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="apple-tart" data-img="cake-apple-tart.jpg">
-    <div class="mi-media"><img src="cake-apple-tart.jpg" alt="טארט תפוחים עם עלה זהב" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-apple-tart.jpg" alt="טארט תפוחים" loading="lazy"></div>
     <h3 class="mi-name">טארט תפוחים</h3>
     <p class="mi-desc">בצק פריך, קרם פטיסייר, תפוחים וקינמון</p>
     <div class="mi-foot">
@@ -417,7 +417,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="bee-sting" data-img="cake-bee-sting.jpg">
-    <div class="mi-media"><img src="cake-bee-sting.jpg" alt="עוקץ הדבורה - בריוש שקדים במילוי קרם" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-bee-sting.jpg" alt="עוקץ הדבורה" loading="lazy"></div>
     <h3 class="mi-name">עוקץ הדבורה</h3>
     <p class="mi-desc">בצק בריוש עם שקדים פרוסים במילוי שנטי וניל</p>
     <div class="mi-foot">
@@ -427,7 +427,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="ny-cheesecake" data-img="cake-ny-cheesecake.jpg">
-    <div class="mi-media"><img src="cake-ny-cheesecake.jpg" alt="צ'יז קייק ניו יורקית עם תותים" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-ny-cheesecake.jpg" alt="צ'יז קייק ניו יורקית אפויה" loading="lazy"></div>
     <h3 class="mi-name">צ'יז קייק ניו יורקית אפויה</h3>
     <p class="mi-desc">הקלאסיקה הניו יורקית, אפויה ועשירה</p>
     <div class="mi-foot">
@@ -437,7 +437,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="honey-mascarpone" data-img="cake-honey-mascarpone.jpg">
-    <div class="mi-media"><img src="cake-honey-mascarpone.jpg" alt="פס דבש מסקרפונה בשכבות" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-honey-mascarpone.jpg" alt="פס דבש מסקרפונה" loading="lazy"></div>
     <h3 class="mi-name">פס דבש מסקרפונה</h3>
     <p class="mi-desc">שכבות של טורט דבש וקרם מסקרפונה וניל</p>
     <div class="mi-foot">
@@ -448,7 +448,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 
    <div class="menu-card menu-item reveal" data-id="tapioca-pomegranate" data-img="cake-tapioca.jpg">
     <span class="mi-badge">פרווה</span>
-    <div class="mi-media"><img src="cake-tapioca.jpg" alt="קערת טפיוקה עם רימונים טריים" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-tapioca.jpg" alt="קערת טפיוקה רימונים" loading="lazy"></div>
     <h3 class="mi-name">קערת טפיוקה רימונים</h3>
     <p class="mi-desc">קולי רימונים, טפיוקה בחלב קוקוס ורימונים טריים</p>
     <div class="mi-foot">
@@ -458,7 +458,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="pavlova" data-img="cake-pavlova.jpg">
-    <div class="mi-media"><img src="cake-pavlova.jpg" alt="קערת פבלובה עם נשיקות מרנג" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-pavlova.jpg" alt="קערת פבלובה" loading="lazy"></div>
     <h3 class="mi-name">קערת פבלובה</h3>
     <p class="mi-desc">מוס וניל, קולי רימונים ונשיקות מרנג</p>
     <div class="mi-foot">
@@ -468,7 +468,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="millefeuille" data-img="cake-millefeuille.jpg">
-    <div class="mi-media"><img src="cake-millefeuille.jpg" alt="פס מילפיי בשכבות בצק עלים וקרם" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-millefeuille.jpg" alt="פס מילפיי" loading="lazy"></div>
     <h3 class="mi-name">פס מילפיי</h3>
     <p class="mi-desc">שכבות בצק עלים וקרם וניל וקרמל</p>
     <div class="mi-foot">
@@ -478,7 +478,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="st-honore" data-img="cake-st-honore.jpg">
-    <div class="mi-media"><img src="cake-st-honore.jpg" alt="סנט אונורה - פחזניות מקורמלות ושנטי וניל" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-st-honore.jpg" alt="סנט אונורה" loading="lazy"></div>
     <h3 class="mi-name">סנט אונורה</h3>
     <p class="mi-desc">בצק עלים, פחזניות מקורמלות במילוי פטיסייר ושנטי וניל</p>
     <div class="mi-foot">
@@ -488,7 +488,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="basque" data-img="cake-basque.jpg">
-    <div class="mi-media"><img src="cake-basque.jpg" alt="באסקית גבינה צרובה" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-basque.jpg" alt="באסקית גבינה" loading="lazy"></div>
     <h3 class="mi-name">באסקית גבינה</h3>
     <p class="mi-desc">עוגת הגבינה הצרובה, קרמית מבפנים</p>
     <div class="mi-foot">
@@ -497,51 +497,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
     </div>
    </div>
 
-  </div>
-
-  <div class="more-menu">
-   <div class="more-head-sticky reveal">
-    <h3 class="more-h3">עוד מהתפריט <span style="color:var(--caramel-deep)">הקר</span></h3>
-    <p class="more-sub">עוד עוגה אחת אחרונה - התמונה שלה בדרך מהסטודיו, והיא כמובן מוכנה להזמנה.</p>
-    <div class="more-deco-wrap">
-     <img class="more-deco poster" src="deco-poster.jpg" alt="קולקציית ראש השנה המאוירת של pâte&puff" loading="lazy">
-     <div class="more-deco-cap">THE HOLIDAY COLLECTION</div>
-    </div>
-   </div>
-
-   <div class="menu-rows">
-
-    <div class="menu-row menu-item reveal" data-id="salted-honey-tart">
-     <div class="mr-info">
-      <h3 class="mi-name">טארט דבש מלוח</h3>
-      <p class="mi-desc">בצק פריך במילוי דבש מלוח</p>
-     </div>
-     <div class="mr-price-wrap">
-      <div class="mi-price">175 <small>₪</small></div>
-      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
-     </div>
-    </div>
-
-   </div>
-  </div>
- </div>
-
- <p class="menu-note">בחרתם? <a href="#order">ממשיכים לסיום ההזמנה ←</a></p>
-</section>
-
-<!-- DRY CAKES -->
-<section class="menu-section dry-section" id="dry">
- <div class="wrap">
-  <div class="sec-head">
-   <div class="eyebrow reveal">THE DRY CAKES</div>
-   <h2 class="sec-h2 reveal">עוגות <span class="accent">יבשות</span></h2>
-   <p class="sec-intro reveal">בחושות דבש ומאפי החג - נכנסים לאותה הזמנה, באותה הודעה.</p>
-  </div>
-
-  <div class="menu-grid">
-
    <div class="menu-card menu-item reveal" data-id="apple-galette" data-img="cake-apple-galette.jpg">
-    <div class="mi-media"><img src="cake-apple-galette.jpg" alt="גאלט תפוחים בבצק עלים" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-apple-galette.jpg" alt="גאלט תפוחים" loading="lazy"></div>
     <h3 class="mi-name">גאלט תפוחים</h3>
     <p class="mi-desc">בצק עלים, קרם שקדים ותפוחים מקורמלים</p>
     <div class="mi-foot">
@@ -552,7 +509,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 
    <div class="menu-card menu-item reveal" data-id="honey-loaf" data-img="cake-honey-loaf.jpg">
     <span class="mi-badge">פרווה</span>
-    <div class="mi-media"><img src="cake-honey-loaf.jpg" alt="בחושה דבש קלאסית" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-honey-loaf.jpg" alt="בחושה דבש" loading="lazy"></div>
     <h3 class="mi-name">בחושה דבש</h3>
     <p class="mi-desc">עוגת הדבש הקלאסית של החג</p>
     <div class="mi-foot">
@@ -573,7 +530,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="honey-apple-loaf" data-img="cake-honey-apple-loaf.jpg">
-    <div class="mi-media"><img src="cake-honey-apple-loaf.jpg" alt="בחושה דבש ותפוחים מקורמלים עם קרמבל" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-honey-apple-loaf.jpg" alt="בחושה דבש ותפוחים מקורמלים" loading="lazy"></div>
     <h3 class="mi-name">בחושה דבש ותפוחים מקורמלים</h3>
     <p class="mi-desc">בחושת דבש, תפוחים מקורמלים וקרמבל</p>
     <div class="mi-foot">
@@ -583,7 +540,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
    </div>
 
    <div class="menu-card menu-item reveal" data-id="apple-strip" data-img="cake-apple-strip.jpg">
-    <div class="mi-media"><img src="cake-apple-strip.jpg" alt="פס תפוחים עם קרמבל ואבקת סוכר" loading="lazy"></div>
+    <div class="mi-media"><img src="cake-apple-strip.jpg" alt="פס תפוחים" loading="lazy"></div>
     <h3 class="mi-name">פס תפוחים</h3>
     <p class="mi-desc">תפוחים מקורמלים על בסיס בצק פריך וקרמבל וניל</p>
     <div class="mi-foot">
@@ -602,25 +559,31 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
     </div>
    </div>
 
-  </div>
-
-  <div class="menu-rows dry-rows">
-
-   <div class="menu-row menu-item reveal" data-id="honey-financier">
-    <div class="mr-info">
-     <h3 class="mi-name">פיננסייר דבש</h3>
+   <div class="menu-card menu-item reveal" data-id="salted-honey-tart">
+    <div class="mi-media ph-tile"><span>ט</span></div>
+    <h3 class="mi-name">טארט דבש מלוח</h3>
+    <p class="mi-desc">בצק פריך במילוי דבש מלוח</p>
+    <div class="mi-foot">
+     <div class="mi-price">175 <small>₪</small></div>
+     <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
     </div>
-    <div class="mr-price-wrap">
+   </div>
+
+   <div class="menu-card menu-item reveal" data-id="honey-financier">
+    <div class="mi-media ph-tile"><span>פ</span></div>
+    <h3 class="mi-name">פיננסייר דבש</h3>
+    <p class="mi-desc"></p>
+    <div class="mi-foot">
      <div class="mi-price">42 <small>₪</small></div>
      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
     </div>
    </div>
 
-   <div class="menu-row menu-item reveal" data-id="honey-pistachio-crispy">
-    <div class="mr-info">
-     <h3 class="mi-name">עוגיות קריספי דבש ופיסטוק</h3>
-    </div>
-    <div class="mr-price-wrap">
+   <div class="menu-card menu-item reveal" data-id="honey-pistachio-crispy">
+    <div class="mi-media ph-tile"><span>ע</span></div>
+    <h3 class="mi-name">עוגיות קריספי דבש ופיסטוק</h3>
+    <p class="mi-desc"></p>
+    <div class="mi-foot">
      <div class="mi-price">42 <small>₪</small></div>
      <div class="stepper"><button type="button" class="st-btn st-minus" aria-label="הפחתה">-</button><span class="st-qty">0</span><button type="button" class="st-btn st-plus" aria-label="הוספה">+</button></div>
     </div>
@@ -628,6 +591,8 @@ nav.scrolled { box-shadow: 0 1px 0 var(--hairline), 0 10px 30px rgba(73,52,27,.0
 
   </div>
  </div>
+
+ <p class="menu-note">בחרתם? <a href="#order">ממשיכים לסיום ההזמנה ←</a></p>
 </section>
 
 <!-- ═══ PHOTO STRIP ═══ -->
